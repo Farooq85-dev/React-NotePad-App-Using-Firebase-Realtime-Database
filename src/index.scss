@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+//Varibles
+$bodyBgColor: #f3f3f3;
+
+body {
+  font-family: "Didact Gothic" !important;
+  background-color: $bodyBgColor !important;
+}
+
+.loaderDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.loader {
+  width: 120px;
+  height: 60px;
+  border-radius: 200px 200px 0 0;
+  -webkit-mask: repeating-radial-gradient(
+    farthest-side at bottom,
+    #0000 0,
+    #000 1px 12%,
+    #0000 calc(12% + 1px) 20%
+  );
+  background: radial-gradient(farthest-side at bottom, #514b82 0 95%, #0000 0)
+    bottom/0% 0% no-repeat #ddd;
+  animation: l10 2s infinite steps(6);
+}
+@keyframes l10 {
+  100% {
+    background-size: 120% 120%;
+  }
+}
