@@ -55,6 +55,7 @@ export function AddNoteModalComp({ open, handleOpen }) {
       toast.success("Note added successfully.");
       setNoteTitle("");
       setNoteDescription("");
+      setNoteLink("");
     } catch (error) {
       toast.error("Please try again.");
       console.error("Error adding note: ", error);

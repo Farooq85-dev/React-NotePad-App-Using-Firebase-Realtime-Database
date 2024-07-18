@@ -56,6 +56,7 @@ export default function SignupLoginFormPage() {
           const errorMessage = error.message;
           if (errorCode === "auth/email-already-in-use") {
             toast.error("Email already registerd. Please login!");
+            return;
           }
           toast.error("Please try again");
         });

@@ -23,12 +23,14 @@ import {
 import UploaderComp from "./Uplaod";
 import toast from "react-hot-toast";
 import { passwordRegex } from "./SignupLogin/Signup.jsx";
+import { useNavigate } from "react-router-dom";
 
 export function AddSettingsModalComp({ open, handleOpen }) {
   const [newPassword, setNewPassword] = useState("");
   const [file, setFile] = useState();
   const [userImageURL, setUserImageURL] = useState(null);
   const [progress, setProgress] = useState(0);
+  const navigate = useNavigate();
 
   //Giving file to uploader
   const handleFile = (file) => {
@@ -61,6 +63,8 @@ export function AddSettingsModalComp({ open, handleOpen }) {
       .then(() => {
         handleOpen();
         toast.success("Signout Successfully.");
+        navigate("/");
+        return;
       })
       .catch((error) => {
         toast.success("Please try again.");
